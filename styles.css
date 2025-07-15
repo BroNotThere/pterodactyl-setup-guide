@@ -1,0 +1,94 @@
+/* Basic reset & variables */
+:root {
+  --bg: #f8fbff;
+  --fg: #1e293b;
+  --accent: #2563eb;
+  --card: #ffffff;
+  --border: #e2e8f0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  background: var(--accent);
+  color: #fff;
+}
+header h1 { font-size: 2.2rem; font-weight: 700; }
+.subtitle { opacity: 0.9; font-size: 1rem; }
+
+/* Nav */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+nav a {
+  padding: .8rem 0;
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 600;
+}
+nav a:hover { color: var(--accent); }
+
+/* Sections */
+section {
+  max-width: 760px;
+  margin: 2.5rem auto;
+  padding: 0 1.2rem;
+}
+section h2 { margin-bottom: 1rem; color: var(--accent); }
+
+/* Code blocks */
+.code-block {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: .8rem;
+  font-family: ui-monospace, monospace;
+  white-space: pre;
+}
+
+/* Copy buttons */
+.copy-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: .5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 1.3rem;
+}
+.copy-btn:hover { opacity: 0.85; }
+
+/* Tips */
+.tip {
+  background: #eef4ff;
+  border-left: 4px solid var(--accent);
+  padding: .8rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.about { text-align: center; }
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 2rem 0 3rem;
+  color: #64748b;
+}

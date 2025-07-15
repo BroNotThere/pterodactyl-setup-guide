@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Pterodactyl & Playit Quick Start</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Pterodactyl + Playit Installer Guide</h1>
+    <p class="subtitle">One‑liner copy &amp; paste commands for a clean setup.</p>
+  </header>
+
+  <nav>
+    <a href="#ptero">Pterodactyl</a>
+    <a href="#playit">Playit IPv4</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <!-- Pterodactyl Section -->
+  <section id="ptero">
+    <h2>🚀 Install Pterodactyl</h2>
+    <p>Run the single command below on a fresh <code>Ubuntu 20.04 / 22.04</code> or Debian server.</p>
+
+    <pre class="code-block">
+bash &lt;(curl -s https://pterodactyl-installer.se)
+    </pre>
+    <button class="copy-btn" data-target="ptero">Copy</button>
+
+    <div class="tip">
+      <strong>Tip ▸</strong> The installer will ask which panel + wings version you want;
+      choose <b>“Latest”</b> for both unless you need a specific release.
+    </div>
+  </section>
+
+  <!-- Playit Section -->
+  <section id="playit">
+    <h2>🌐 Expose SSH (Playit Tunnel)</h2>
+    <p>Paste the entire block in your terminal. It will add the Playit PPA and start the service.</p>
+
+<pre class="code-block">
+curl -SsL https://playit-cloud.github.io/ppa/key.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/playit.gpg >/dev/null
+echo "deb [signed-by=/etc/apt/trusted.gpg.d/playit.gpg] https://playit-cloud.github.io/ppa/data ./" | sudo tee /etc/apt/sources.list.d/playit-cloud.list
+sudo apt update
+sudo apt install playit
+sudo systemctl start playit
+sudo systemctl enable playit
+playit setup
+</pre>
+    <button class="copy-btn" data-target="playit">Copy</button>
+
+    <div class="tip">
+      <strong>Next step ▸</strong> The <code>playit setup</code> command prints a claim‑link.
+      Open it in your browser, create a <b>TCP + UDP</b> tunnel, set <b>Port 22</b>,
+      and copy the IP + Port combo. That becomes your public SSH endpoint.
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2>About This Page</h2>
+    <p>
+      Written for quick‑start admins who just need the bare‑minimum commands without scrolling massive docs.
+      No frameworks, no tracking – view source, fork, enjoy!
+    </p>
+  </section>
+
+  <footer>
+    © 2025 QuickStart Docs • MIT License
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
